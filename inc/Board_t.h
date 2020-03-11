@@ -8,7 +8,8 @@ class Board_t
 private:
   int rows_;
   int cols_;
-  std::vector<std::vector<Cell_t* > > cellArray_;
+  unsigned int turn_;
+  std::vector<std::vector<Cell_t *> > cellArray_;
 
 public:
   Board_t(int rows, int cols);
@@ -23,5 +24,6 @@ public:
   //output
   std::ostream &printBoard(std::ostream &os);
   void deleteBoard();
-
+  void newTurn();
+  inline Cell_t* getCell(int i, int j) const { return cellArray_[i][j];}
 };
